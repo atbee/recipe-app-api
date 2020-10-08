@@ -6,10 +6,11 @@ ENV PYTHONUNBUFFERED 1
 
 WORKDIR /app
 
-COPY ./requirements requirements
+COPY ./app/requirements requirements
 RUN pip install -r requirements/base.txt
 
-COPY . .
+COPY ./app /app
+RUN ls
 
 RUN useradd user
 USER user
