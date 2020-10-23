@@ -26,7 +26,7 @@ dump:
 flake8:
 	docker-compose run --rm app sh -c "flake8"
 
-init-data:
+initdata:
 	docker-compose run --rm app sh -c "python manage.py loaddata initial_data"
 
 migrate:
@@ -42,7 +42,7 @@ shell:
 	docker-compose run --rm app sh -c "python manage.py shell"
 
 isort:
-	docker-compose run --rm app sh -c "isort . --skip migrations"
+	docker-compose run --rm app sh -c "isort . --skip migrations --profile django"
 
 test:
 	docker-compose run --rm app sh -c "pytest"
