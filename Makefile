@@ -1,15 +1,15 @@
 manual:
 	@echo "You can find the shortcut in the make file. 😎"
 
-# Create new app
-# Ex. make app name=NEW_APP
-app:
-	docker-compose run --rm app sh -c "python manage.py startapp $(name)"
-
 build:
 	docker-compose build
 
 commit: flake8 isort test
+
+# Create new app
+# Ex. make createapp name=NEW_APP
+createapp:
+	docker-compose run --rm app sh -c "python manage.py startapp $(name)"
 
 createsuperuser:
 	docker-compose run --rm app sh -c "python manage.py createsuperuser"
