@@ -13,6 +13,8 @@ class UserManager(BaseUserManager):
 
         return user
 
+    def create_superuser(self, email, password):
+        pass
 
 class User(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(max_length=255, unique=True)
